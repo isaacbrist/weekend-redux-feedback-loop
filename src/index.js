@@ -11,6 +11,8 @@ import registerServiceWorker from './registerServiceWorker';
 const answerData = (state = [], action) => {
   if (action.type === 'ADD_NEW_ANSWER') {
     return [...state, action.payload];
+  } else if (action.type === 'CLEAR_ALL_ANSWERS') {
+    return [];
   }
   return state;
 };
