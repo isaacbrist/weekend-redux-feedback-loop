@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 function Comments(){
     const history = useHistory()
     const dispatch=useDispatch()
-    const[comment, setComments]=useState(0)
+    const[comment, setComments]=useState('')
  
     const addComment = (event) => {
         console.log(comment);

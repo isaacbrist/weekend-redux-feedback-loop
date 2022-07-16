@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 function Supported(){
     const history = useHistory()
     const dispatch=useDispatch()
-    const[supported, setSupported]=useState(0)
+    const[supported, setSupported]=useState('')
  
     const addUnderstanding = (event) => {
         console.log(supported);

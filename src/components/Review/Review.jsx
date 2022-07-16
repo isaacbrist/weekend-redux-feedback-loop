@@ -10,7 +10,9 @@ function Review(){
     const submitFeedback = (event) => {
         console.log('Here is the answerData from the store', answerData);
         event.preventDefault();
-        axios.post('/feedback', {...answerData})
+        const newFeedback=Object.assign(...answerData)
+        console.log('Here is the newFeedback', newFeedback)
+        axios.post('/feedback', newFeedback)
         .then(response =>{
             handleNextButton()
         })
@@ -20,11 +22,11 @@ function Review(){
         })
         
       }
-    
+
   //handle button click when the 'Next' button is pressed
   const handleNextButton=()=>{
     console.log('You clicked the button!')
-    history.push('/new-feedback')
+    history.push('/feedback')
     }
  {/* page 5: Review */}
 
@@ -46,7 +48,7 @@ return(
             
           </li>
         </ul>
-        <button onSubmit={submitFeedback} type="submit">
+        <button onClick={submitFeedback} type="submit">
           Submit
         </button>
       

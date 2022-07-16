@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 function Feeling(){
   const history = useHistory()
     const dispatch=useDispatch()
-    const[feelings, setFeelings]=useState(0)
+    const[feelings, setFeelings]=useState('')
  
     const addFeeling = (event) => {
         console.log(feelings);

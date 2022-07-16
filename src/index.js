@@ -15,7 +15,10 @@ const answerData = (state = [], action) => {
   return state;
 };
 // The store is the big JavaScript Object that holds all of the information for our application
-const storeInstance = createStore(combineReducers({answerData}), applyMiddleware(logger));
+const storeInstance = createStore(
+  combineReducers({answerData}),
+  applyMiddleware(logger)
+);
 // Wrap our App in a Provider, this makes Redux available in
 // our entire application
 ReactDOM.render(
