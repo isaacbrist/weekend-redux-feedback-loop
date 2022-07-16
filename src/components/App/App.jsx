@@ -33,9 +33,6 @@ history.push('/Understanding')
         <li>
           <Link to="/feeling">Feeling</Link>
         </li>
-        <li>
-        <Link to="/understanding">Understanding</Link>
-      </li>
       </ul>
   <Route exact path="/feeling">
     <Feeling  />
@@ -45,6 +42,9 @@ history.push('/Understanding')
   </Route>
   <Route exact path="/supported">
     <Supported />
+  </Route>
+  <Route exact path="/comments">
+    <Comments />
   </Route>
 </Router>
 
