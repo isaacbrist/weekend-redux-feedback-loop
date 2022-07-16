@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom'
 function Understanding(){
     const history = useHistory()
     const dispatch=useDispatch()
-    const[understanding, setUnderstanding]=useState(0)
+    const[understanding, setUnderstanding]=useState('')
  
     const addUnderstanding = (event) => {
         console.log(understanding);

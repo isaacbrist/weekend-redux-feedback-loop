@@ -9,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Feedback from '../Feedback/Feedback';
 function App() {
   const dispatch=useDispatch();
 
@@ -49,6 +50,9 @@ history.push('/Understanding')
   </Route>
   <Route exact path="/review">
     <Review />
+  </Route>
+  <Route exact path="/feedback">
+    <Feedback />
   </Route>
 </Router>
 
