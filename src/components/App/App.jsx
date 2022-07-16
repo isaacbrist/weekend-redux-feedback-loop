@@ -7,7 +7,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
-
+import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
 function App() {
   const dispatch=useDispatch();
 
@@ -45,6 +46,9 @@ history.push('/Understanding')
   </Route>
   <Route exact path="/comments">
     <Comments />
+  </Route>
+  <Route exact path="/review">
+    <Review />
   </Route>
 </Router>
 
