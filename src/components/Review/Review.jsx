@@ -1,19 +1,24 @@
+import axios from 'axios';
 import React, { useState }  from 'react';
-import{useSelector, useDispatch} from 'react-redux'
+import{useSelector, u} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-function Comments(){
+function Review(){
     const history = useHistory()
-    const dispatch=useDispatch()
-    const[comment, setComments]=useState(0)
- 
-    const addComment = (event) => {
-        console.log(comment);
+  
+    const answerData= useSelector(store=> store.answerData)
+
+    const submitFeedback = (event) => {
+        console.log('Here is the answerData from the store', answerData);
         event.preventDefault();
-        dispatch({
-          type: 'ADD_NEW_ANSWER',
-          payload: {comments: comment}
-        });
-        handleNextButton()
+        axios.post('/feedback', {...answerData})
+        .then(response =>{
+            handleNextButton()
+        })
+        .catch(error=>{
+            console.log('Error in axios.post', error)
+            alert('Your feedback is not required at this time')
+        })
+        
       }
     
   //handle button click when the 'Next' button is pressed
@@ -21,26 +26,34 @@ function Comments(){
     console.log('You clicked the button!')
     history.push('/new-feedback')
     }
-{/* Page 4: Any comments? */}
+ {/* page 5: Review */}
 
 return(
       
+    
+       
+        <div>
+          <h2>Review</h2>
+        
+        <ul>
+        {answerData.map((answer, i) => (
+          <li key={i}>{answer.feeling}
+           {answer.understanding}
+          {answer.support}
+          {answer.comments}</li>
+          ))}
+          <li>
+            
+          </li>
+        </ul>
+        <button onSubmit={submitFeedback} type="submit">
+          Submit
+        </button>
+      
+        </div>
 
-  <div>
-    <h4>Any comments you want to leave?</h4>
-  <form onSubmit={addComment}>
-   <input 
-     required 
-     placeholder="Leave any comments" 
-     value={comment}
-     onChange={(event) => setComments(event.target.value)}
-   />
-   <button type="submit">
-   Next
-   </button>
-   </form>
-  </div>
+
 )
 }
 
-export default Comments
+export default Review
