@@ -1,23 +1,25 @@
-import React from 'react';
-import{useSelector, useDispatch} from 'react-redux'
-
+import React, { useState }  from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom'
 function Feeling(){
+  const history = useHistory()
     const dispatch=useDispatch()
     const[feelings, setFeelings]=useState(0)
  
     const addFeeling = (event) => {
-        console.log(product);
+        console.log(feelings);
         event.preventDefault();
         dispatch({
           type: 'ADD_NEW_ANSWER',
           payload: {feeling: feelings}
         });
+        handleNextButton()
       }
     
   //handle button click when the 'Next' button is pressed
   const handleNextButton=()=>{
     console.log('You clicked the button!')
-    history.push('/Understanding')
+    history.push('/understanding')
     }
     
 return(
@@ -25,7 +27,7 @@ return(
         {/* page 1: Feeling */}
         
           <h4>How are you feeling today?</h4>
-        <form onSubmit={handleNextButton}>
+        <form onSubmit={addFeeling}>
         <input 
           required 
           placeholder="Rate on a scale of 1-10" 
@@ -37,6 +39,7 @@ return(
         </button>
       </form>
         </div>
+        
 )
 }
 
