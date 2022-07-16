@@ -1,22 +1,6 @@
 
       
 
-        {/* Page 4: Any comments? */}
-        <div>
-          <h4>Any comments you want to leave?</h4>
-        <form onSubmit={handleNextButton}>
-        <input 
-          required 
-          placeholder="Leave any comments" 
-          value={comments}
-          onChange={(event) => setComments(event.target.value)}
-        />
-        <button type="submit">
-          Next
-        </button>
-      </form>
-        </div>
-
         {/* page 5: Review */}
         <div>
           <h2>Review</h2>
