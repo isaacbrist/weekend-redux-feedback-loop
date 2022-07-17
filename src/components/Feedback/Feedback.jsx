@@ -15,10 +15,10 @@ function Feedback(){
       handleNewButton()
     }
   
-//handle button click when the 'Next' button is pressed
+//handle button click when the 'Next' button is pressed  and start a new feedback
 const handleNewButton=()=>{
   console.log('You clicked the button!')
-  history.push('/feeling')
+  history.push('/')
   }
   
      {/* page 6: Click new feedback */}

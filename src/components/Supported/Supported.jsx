@@ -16,7 +16,7 @@ function Supported(){
         handleNextButton()
       }
     
-  //handle button click when the 'Next' button is pressed
+  //handle button click when the 'Next' button is pressed and go to the next page
   const handleNextButton=()=>{
     console.log('You clicked the button!')
     history.push('/comments')

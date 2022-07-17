@@ -16,6 +16,18 @@ const answerData = (state = [], action) => {
   }
   return state;
 };
+// const suggestedAnswerData = (state = {}, action) => {
+//   if (action.type === 'ADD_NEW_ANSWER') {
+//     return [...state, action.payload];
+//     // Now, when you dispatch, you can do something like:
+//     //  type: 'ADD_NEW_ANSWER',
+//     // payload: {comments: comment}
+//   } else if (action.type === 'CLEAR_ALL_ANSWERS') {
+//     return [];
+//   }
+//   return state;
+// };
+
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
   combineReducers({answerData}),
