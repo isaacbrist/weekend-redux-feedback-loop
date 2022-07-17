@@ -25,13 +25,13 @@ For this project I created a feedback form to share how you are feeling and how 
 
 ![Image 2](public/images/app-pic-2.png)
 
-![Image 3](public/images/app-pic-1.png)
+![Image 3](public/images/app-pic-3.png)
 
-![Image 4](public/images/app-pic-2.png)
+![Image 4](public/images/app-pic-4.png)
 
-![Image 5](public/images/app-pic-1.png)
+![Image 5](public/images/app-pic-5.png)
 
-![Image 6](public/images/app-pic-2.png)
+![Image 6](public/images/app-pic-6.png)
 
 ## Built With
 
