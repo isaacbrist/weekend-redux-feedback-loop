@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
 import{useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 function Understanding(){
     const history = useHistory()
     const dispatch=useDispatch()
@@ -21,21 +23,37 @@ function Understanding(){
     console.log('You clicked the button!')
     history.push('/supported')
     }
+    //beginning of back button. 
+    // const handleBackButton=()=>{
+    //   console.log('You clicked the back button!')
+    //   history.push('/')
+    //   }
+    //   <Button variant="contained"
+    //       onClick={handleBackButton} 
+    //       type="back"
+    //       button="false">
+    //       back
+    //     </Button>
       {/* Page 2: Understanding */}
 return(
       
         <div>
           <h4>How well are you understanding the content</h4>
+          
+          
         <form onSubmit={addUnderstanding}>
+        
         <input 
           required 
           placeholder="Rate on a scale of 1-10" 
           value={understanding}
           onChange={(event) => setUnderstanding(event.target.value)}
         />
-        <button type="submit">
+        <Button variant="contained" 
+          type="submit"
+          button="true">
           Next
-        </button>
+        </Button>
       </form>
         </div>
 

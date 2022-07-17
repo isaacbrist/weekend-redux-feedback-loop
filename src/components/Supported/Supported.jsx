@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
 import{useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 function Supported(){
     const history = useHistory()
     const dispatch=useDispatch()
@@ -35,9 +37,11 @@ return(
      value={supported}
      onChange={(event) => setSupported(event.target.value)}
    />
-   <button type="submit">
-   Next
-   </button>
+      <Button variant="contained" 
+          type="submit"
+          button="true">
+          Next
+        </Button>
    </form>
   </div>
 )
