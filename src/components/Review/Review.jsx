@@ -3,6 +3,8 @@ import React, { useState }  from 'react';
 import{useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import './Review.css'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 function Review(){
     const history = useHistory()
   
@@ -59,9 +61,13 @@ return(
         </tbody>
       </table>
      
-        <button onClick={submitFeedback} type="submit">
+      <Button variant="contained" 
+          onClick={submitFeedback}
+          type="submit"
+          button="true">
           Submit
-        </button>
+        </Button>
+      
       
         </div>
 

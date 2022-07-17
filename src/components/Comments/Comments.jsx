@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
 import{useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import './Comments.css'
 function Comments(){
     const history = useHistory()
@@ -37,9 +39,11 @@ return(
    onChange={(event) => setComments(event.target.value)}
    style={{fontSize: '1.2em'}}>
 </textarea>
-   <button type="submit">
-   Next
-   </button>
+<Button variant="contained" 
+          type="submit"
+          button="true">
+          Next
+        </Button>
    </form>
   </div>
 )

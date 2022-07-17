@@ -1,6 +1,8 @@
 import React, { useState }  from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom'
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
       
 function Feedback(){
   const history = useHistory()
@@ -29,10 +31,11 @@ const handleNewButton=()=>{
         <div>
           <h2>Thank You!</h2>
         <form onSubmit={newFeedback}>
-        
-        <button type="new">
-          Leave new feedback
-        </button>
+        <Button variant="contained" 
+          type="new"
+          button="true">
+           Leave new feedback
+        </Button>
       </form>
         </div>
 )}
