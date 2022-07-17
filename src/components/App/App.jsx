@@ -16,11 +16,6 @@ function App() {
   useEffect(() => {
 
   }, [] );
-  //handle button click when the 'Next' button is pressed
-const handleNextButton=()=>{
-console.log('You clicked the button!')
-history.push('/Understanding')
-}
 
   return (
     <div className='App'>
@@ -31,12 +26,7 @@ history.push('/Understanding')
 
       <main>
 <Router>
-      <ul>
-        <li>
-          <Link to="/feeling">Feeling</Link>
-        </li>
-      </ul>
-  <Route exact path="/feeling">
+  <Route exact path="/">
     <Feeling  />
   </Route>
   <Route exact path="/understanding">

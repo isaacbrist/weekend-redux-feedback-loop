@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body{
+  text-align: center;
+  background-color: #EEF3E2
+ 
+}
 .App-header {
   background-color: #033076;
   min-height: 70px;

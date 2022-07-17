@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useState }  from 'react';
-import{useSelector, u} from 'react-redux'
+import{useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import './Review.css'
 function Review(){
     const history = useHistory()
   
     const answerData= useSelector(store=> store.answerData)
-
+ //POST to the database
     const submitFeedback = (event) => {
         console.log('Here is the answerData from the store', answerData);
         event.preventDefault();
@@ -23,7 +24,7 @@ function Review(){
         
       }
 
-  //handle button click when the 'Next' button is pressed
+  //handle button click when the 'Next' button is pressed and go to the next page
   const handleNextButton=()=>{
     console.log('You clicked the button!')
     history.push('/feedback')
@@ -35,19 +36,29 @@ return(
     
        
         <div>
-          <h2>Review</h2>
+          <h2>Review your Feedback</h2>
+        {/* loop through the answers */}
+     
         
-        <ul>
-        {answerData.map((answer, i) => (
-          <li key={i}>{answer.feeling}
+      <table>
+        <thead>
+          <tr className="table-header">
+            <th>How are you feeling today?</th>
+            <th>Understanding of the content?</th>
+            <th>Do you feel supported?</th>
+            <th>Any comments?</th>
+          </tr>
+        </thead>
+        <tbody className="table-body">
+          <tr>{answerData.map((answer, i) => (
+          <td key={i}>{answer.feeling}
            {answer.understanding}
           {answer.support}
-          {answer.comments}</li>
-          ))}
-          <li>
-            
-          </li>
-        </ul>
+          {answer.comments}</td>
+          ))}</tr>
+        </tbody>
+      </table>
+     
         <button onClick={submitFeedback} type="submit">
           Submit
         </button>
