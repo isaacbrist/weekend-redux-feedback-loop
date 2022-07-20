@@ -62,6 +62,7 @@ return(
       </table>
      
       <Button variant="contained" 
+          size=""
           onClick={submitFeedback}
           type="submit"
           button="true">

@@ -3,12 +3,14 @@ import{useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 function Supported(){
     const history = useHistory()
     const dispatch=useDispatch()
     const[supported, setSupported]=useState('')
  
-    const addUnderstanding = (event) => {
+    const addSupported = (event) => {
         console.log(supported);
         event.preventDefault();
         dispatch({
@@ -27,23 +29,34 @@ function Supported(){
 
 return(
       
-
-  <div>
-    <h4>How well are being supported?</h4>
-  <form onSubmit={addUnderstanding}>
-   <input 
-     required 
-     placeholder="Rate on a scale of 1-10" 
-     value={supported}
-     onChange={(event) => setSupported(event.target.value)}
-   />
-      <Button variant="contained" 
+<div>
+      {/* beginning of a MUI text box. */}
+      <h4>How well are being supported?</h4>
+  <Box
+  component="form"
+  onSubmit={addSupported}
+  sx={{
+    '& > :not(style)': { m: 1, width: '25ch', height: '7ch' },
+  }}
+  validate
+  autoComplete="off"
+>
+{/* Text Field */}
+  <TextField id="filled-basic" 
+          required 
+          placeholder="Rate on a scale of 1-10" 
+          value={supported}
+          onChange={(event) => setSupported(event.target.value)}
+          label="Support" 
+          variant="filled" />
+        <Button variant="contained" 
           type="submit"
           button="true">
           Next
         </Button>
-   </form>
-  </div>
+      
+  </Box>
+</div> 
 )
 }
 

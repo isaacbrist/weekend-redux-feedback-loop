@@ -26,44 +26,38 @@ function Feeling(){
     history.push('/understanding')
     }
 
-//beginning of a MUI text box.
-//     
-//     <Box
-//   component="form"
-//   sx={{
-//     '& > :not(style)': { m: 1, width: '25ch' },
-//   }}
-//   noValidate
-//   autoComplete="off"
-// >
 
-//   <TextField id="filled-basic" label="Filled" variant="filled" />
-
-// </Box>
-
-
-
+  //  {/* page 1: Feeling */}
+    
 return(
     <div>
-        {/* page 1: Feeling */}
-        
-          <h4>How are you feeling today?</h4>
-      <form onSubmit={addFeeling}>
-        <input 
+      {/* beginning of a MUI text box. */}
+      <h4>How are you feeling today?</h4>
+    <Box
+  component="form"
+  onSubmit={addFeeling}
+  sx={{
+    '& > :not(style)': { m: 1, width: '25ch', height: '7ch' },
+  }}
+  validate
+  autoComplete="off"
+>
+{/* Text Field */}
+  <TextField id="filled-basic" 
           required 
           placeholder="Rate on a scale of 1-10" 
           value={feelings}
           onChange={(event) => setFeelings(event.target.value)}
-        />
+          label="Feeling" 
+          variant="filled" />
         <Button variant="contained" 
           type="submit"
           button="true">
           Next
         </Button>
       
-      </form>
-        </div>
-        
+</Box>
+        </div>     
 )
 }
 

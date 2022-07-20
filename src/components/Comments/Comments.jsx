@@ -4,6 +4,8 @@ import {useHistory} from 'react-router-dom'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import './Comments.css'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 function Comments(){
     const history = useHistory()
     const dispatch=useDispatch()
@@ -31,21 +33,32 @@ return(
 
   <div>
     <h4>Any comments you want to leave?</h4>
-  <form onSubmit={addComment}>
-  <textarea
-   className='input-field'
-   placeholder="Leave any comments" 
-   value={comment}
-   onChange={(event) => setComments(event.target.value)}
-   style={{fontSize: '1.2em'}}>
-</textarea>
-<Button variant="contained" 
-          type="submit"
-          button="true">
-          Next
-        </Button>
-   </form>
+    <Box
+component="form"
+onSubmit={addComment}
+sx={{
+  '& > :not(style)': { m: 1, width: '25ch', height: '7ch' },
+}}
+validate
+autoComplete="off"
+>
+{/* Text Field */}
+<TextField id="filled-basic" 
+        placeholder="Write your comments" 
+        value={comment}
+        onChange={(event) => setComments(event.target.value)}
+        label="Comment" 
+        variant="filled" />
+      <Button variant="contained" 
+        type="submit"
+        button="true">
+        Next
+      </Button>
+    
+</Box>
   </div>
+
+  
 )
 }
 
