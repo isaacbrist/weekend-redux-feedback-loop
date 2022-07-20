@@ -21,7 +21,7 @@ function Review(){
         })
         .catch(error=>{
             console.log('Error in axios.post', error)
-            alert('Your feedback is not required at this time')
+            alert('Error in post', error)
         })
         
       }
