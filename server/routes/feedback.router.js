@@ -3,20 +3,6 @@ const router = express.Router();
 
 const pool = require('../modules/pool');
 
-// // Get all books
-// router.get('/', (req, res) => {
-//   let queryText = 'SELECT title, author FROM "books" ORDER BY "title";';
-//   pool
-//     .query(queryText)
-//     .then((result) => {
-//       // Sends back the results in an object
-//       res.send(result.rows);
-//     })
-//     .catch((error) => {
-//       console.log('error getting books', error);
-//       res.sendStatus(500);
-//     });
-// });
 
 // Adds a new answer to the database.
 router.post('/', (req, res) => {

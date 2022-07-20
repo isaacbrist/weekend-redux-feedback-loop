@@ -3,6 +3,8 @@ import{useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 function Understanding(){
     const history = useHistory()
     const dispatch=useDispatch()
@@ -37,26 +39,35 @@ function Understanding(){
       {/* Page 2: Understanding */}
 return(
       
-        <div>
-          <h4>How well are you understanding the content</h4>
-          
-          
-        <form onSubmit={addUnderstanding}>
-        
-        <input 
+<div>
+      
+      {/* beginning of a MUI text box. */}
+      <h4>How well are you understanding the content</h4>
+    <Box
+  component="form"
+  onSubmit={addUnderstanding}
+  sx={{
+    '& > :not(style)': { m: 1, width: '25ch', height: '7ch' },
+  }}
+  validate
+  autoComplete="off"
+>
+{/* Text Field */}
+  <TextField id="filled-basic" 
           required 
           placeholder="Rate on a scale of 1-10" 
           value={understanding}
           onChange={(event) => setUnderstanding(event.target.value)}
-        />
+          label="Understanding" 
+          variant="filled" />
         <Button variant="contained" 
           type="submit"
           button="true">
           Next
         </Button>
-      </form>
-        </div>
-
+      
+  </Box>
+</div>     
 )
 }
 
